@@ -36,7 +36,8 @@ import java.math.BigDecimal;
          * */
 
         //when we receive a createAccount command we need to apply an account-created-event
-        @CommandHandler // let axon know that this constructor is "for handling create account command" next we need to handle the event too
+        @CommandHandler // let axon know that this constructor is "for handling create account command" next we need to
+        // handle the event too
         public AccountAggregate(CreateAccountCommand createAccountCommand) {
             log.info("CreateAccountCommand received.");
             /**
@@ -48,7 +49,8 @@ import java.math.BigDecimal;
                     createAccountCommand.getBalance()));
         }
 
-        //to handle the account create event
+        //we need to handle the account create event with eventSourcingHandler method and apply account activate event
+        // on accountAggregate
         @EventSourcingHandler
         public void on(AccountCreatedEvent accountCreatedEvent) {
             log.info("An AccountCreatedEvent occurred.");
@@ -65,7 +67,7 @@ import java.math.BigDecimal;
             AggregateLifecycle.apply(new AccountActivatedEvent(this.accountId, "ACTIVATED"));
         }
 
-
+        //this method is to handle the applied event in up and just updates the accountAggregate status
 
         @EventSourcingHandler
         public void on(AccountActivatedEvent accountActivatedEvent) {

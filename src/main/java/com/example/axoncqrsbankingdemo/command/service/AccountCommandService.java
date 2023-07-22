@@ -15,13 +15,17 @@ import java.util.concurrent.CompletableFuture;
 @Service
 public class AccountCommandService {
 
+    //this is where the commands come from
     private final CommandGateway commandGateway;
 
     public AccountCommandService(CommandGateway commandGateway) {
         this.commandGateway = commandGateway;
     }
 
+    //completableFuture means it doesnt have to wait for the command to fully execute
+    //it just returns the account id that we generated why? its how the axon implemented it
     public CompletableFuture<String> createAccount(CreateAccountRequest createAccountRequest) {
+        //this is where we create and send command to command gateway then is calls the command in accountAggregate
         return commandGateway.send(new CreateAccountCommand(
                 UUID.randomUUID().toString(),
                 createAccountRequest.getStartingBalance())

@@ -20,6 +20,7 @@ public class BankAccountController {
         this.accountCommandService = accountCommandService;
     }
 
+    //just calling the requests from service layer
     @PostMapping(value = "/create")
     public ResponseEntity<String> createAccount(@RequestBody CreateAccountRequest request) {
         try {
