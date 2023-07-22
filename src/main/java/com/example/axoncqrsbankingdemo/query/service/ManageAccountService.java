@@ -43,6 +43,7 @@ public class ManageAccountService {
             accountRepository.save(account);
         }
     }
+
     @EventHandler
     public void on(AccountCreditedEvent accountCreditedEvent) {
         log.info("Handling AccountCreditedEvent...");
@@ -54,6 +55,7 @@ public class ManageAccountService {
                     .add(accountCreditedEvent.getAmount()));
         }
     }
+
     @EventHandler
     public void on(AccountDebitedEvent accountDebitedEvent) {
         log.info("Handling AccountDebitedEvent...");
