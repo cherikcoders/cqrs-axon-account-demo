@@ -1,9 +1,9 @@
 package com.example.axoncqrsbankingdemo.query.service;
 
-import com.example.axoncqrsbankingdemo.common.event.AccountActivatedEvent;
-import com.example.axoncqrsbankingdemo.common.event.AccountCreatedEvent;
 import com.example.axoncqrsbankingdemo.common.event.AccountCreditedEvent;
 import com.example.axoncqrsbankingdemo.common.event.AccountDebitedEvent;
+import com.example.axoncqrsbankingdemo.common.event.AccountActivatedEvent;
+import com.example.axoncqrsbankingdemo.common.event.AccountCreatedEvent;
 import com.example.axoncqrsbankingdemo.query.entity.Account;
 import com.example.axoncqrsbankingdemo.query.query.FindAccountByIdQuery;
 import com.example.axoncqrsbankingdemo.query.repository.AccountRepository;
@@ -16,12 +16,16 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ManageAccountService {
 
+    //this service is to handle events that wil be dispatched to our event-store
+
+    //to fetch and save accounts
     private final AccountRepository accountRepository;
 
     public ManageAccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 
+    //to handle  account created  event
     @EventHandler
     public void on(AccountCreatedEvent accountCreatedEvent) {
         log.info("Handling AccountCreatedEvent...");
@@ -33,6 +37,7 @@ public class ManageAccountService {
         accountRepository.save(account);
     }
 
+
     @EventHandler
     public void on(AccountActivatedEvent accountActivatedEvent) {
         log.info("Handling AccountActivatedEvent...");
@@ -43,6 +48,7 @@ public class ManageAccountService {
             accountRepository.save(account);
         }
     }
+
 
     @EventHandler
     public void on(AccountCreditedEvent accountCreditedEvent) {

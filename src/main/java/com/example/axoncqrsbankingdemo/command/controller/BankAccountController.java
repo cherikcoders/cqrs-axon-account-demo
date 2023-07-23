@@ -1,9 +1,9 @@
 package com.example.axoncqrsbankingdemo.command.controller;
 
 import com.example.axoncqrsbankingdemo.command.dto.CreateAccountRequest;
-import com.example.axoncqrsbankingdemo.command.dto.DepositRequest;
 import com.example.axoncqrsbankingdemo.command.dto.WithdrawalRequest;
 import com.example.axoncqrsbankingdemo.command.service.AccountCommandService;
+import com.example.axoncqrsbankingdemo.command.dto.DepositRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

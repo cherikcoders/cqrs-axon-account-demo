@@ -2,12 +2,12 @@ package com.example.axoncqrsbankingdemo.command.aggregate;
 
 
 import com.example.axoncqrsbankingdemo.command.command.CreateAccountCommand;
+import com.example.axoncqrsbankingdemo.common.event.AccountDebitedEvent;
 import com.example.axoncqrsbankingdemo.command.command.DepositMoneyCommand;
 import com.example.axoncqrsbankingdemo.command.command.WithdrawMoneyCommand;
 import com.example.axoncqrsbankingdemo.common.event.AccountActivatedEvent;
 import com.example.axoncqrsbankingdemo.common.event.AccountCreatedEvent;
 import com.example.axoncqrsbankingdemo.common.event.AccountCreditedEvent;
-import com.example.axoncqrsbankingdemo.common.event.AccountDebitedEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;

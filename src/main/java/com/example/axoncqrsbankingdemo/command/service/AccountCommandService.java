@@ -4,8 +4,8 @@ import com.example.axoncqrsbankingdemo.command.command.CreateAccountCommand;
 import com.example.axoncqrsbankingdemo.command.command.DepositMoneyCommand;
 import com.example.axoncqrsbankingdemo.command.command.WithdrawMoneyCommand;
 import com.example.axoncqrsbankingdemo.command.dto.CreateAccountRequest;
-import com.example.axoncqrsbankingdemo.command.dto.DepositRequest;
 import com.example.axoncqrsbankingdemo.command.dto.WithdrawalRequest;
+import com.example.axoncqrsbankingdemo.command.dto.DepositRequest;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.stereotype.Service;
 
