@@ -1,9 +1,9 @@
 package com.example.axoncqrsbankingdemo.query.service;
 
-import com.example.axoncqrsbankingdemo.common.event.AccountCreditedEvent;
-import com.example.axoncqrsbankingdemo.common.event.AccountDebitedEvent;
 import com.example.axoncqrsbankingdemo.common.event.AccountActivatedEvent;
 import com.example.axoncqrsbankingdemo.common.event.AccountCreatedEvent;
+import com.example.axoncqrsbankingdemo.common.event.AccountCreditedEvent;
+import com.example.axoncqrsbankingdemo.common.event.AccountDebitedEvent;
 import com.example.axoncqrsbankingdemo.query.entity.Account;
 import com.example.axoncqrsbankingdemo.query.query.FindAccountByIdQuery;
 import com.example.axoncqrsbankingdemo.query.repository.AccountRepository;
@@ -82,4 +82,5 @@ public class ManageAccountService {
 
         return account;
     }
+
 }

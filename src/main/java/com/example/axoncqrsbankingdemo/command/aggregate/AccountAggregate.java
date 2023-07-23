@@ -18,10 +18,12 @@ import org.axonframework.spring.stereotype.Aggregate;
 import java.math.BigDecimal;
 
 @Aggregate /// this is my main aggregate class , aggregate is an object that keeps the state of application
+// and its like @entity you may have an aggregate class for each entity to handle events
     @Slf4j //easier logging
     public class AccountAggregate {
 
-        @AggregateIdentifier
+    //aggregate class fields are the important entity fields that are effective in status
+        @AggregateIdentifier// without this id the application won't recognize aggregate class
         private String accountId;
         private BigDecimal balance;
         private String status;
